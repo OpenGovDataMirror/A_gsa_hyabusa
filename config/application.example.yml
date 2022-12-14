@@ -1,0 +1,29 @@
+# Add account credentials and API keys here.
+# See http://railsapps.github.io/rails-environment-variables.html
+# This file should be listed in .gitignore to keep your settings secret!
+# Each entry sets a local environment variable and overrides ENV variables in the Unix shell.
+# For example, setting:
+# GMAIL_USERNAME: Your_Gmail_Username
+# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
+# Add application configuration variables here, as shown below.
+#
+HYABUSA_HOME: http://my.business.usa.gov # base URL for this application
+
+GMAIL_USERNAME: name
+GMAIL_PASSWORD: pass
+
+ADMIN_NAME: admin
+ADMIN_EMAIL: email
+ADMIN_PASSWORD: pass
+
+MYUSA_OAUTH_PROVIDER_KEY: foo
+MYUSA_OAUTH_PROVIDER_SECRET: bar
+MYUSA_HOME: http://my.usa.gov
+MYUSA_SCOPES: profile tasks notifications manage_business_profile
+
+ROLES: [admin, user, VIP]
+
+FBOPEN_URI: http://ec2-54-200-57-170.us-west-2.compute.amazonaws.com
+FBOPEN_API_PORT: 3000
+
+MODUS_OPERANDI_HOME: http://mo.tynsax.com

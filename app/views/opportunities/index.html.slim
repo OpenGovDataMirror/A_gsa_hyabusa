@@ -1,0 +1,34 @@
+.row
+	.col-md-7
+		h1
+			| Find Opportunities
+
+		ul
+		- if @opportunities.any?
+			- @opportunities.each do |opp|
+				li
+					= link_to opp['name'], "/opportunities/mo/#{opp['url']}"
+					p
+						= opp['description']
+		- else
+			li
+				| Sorry, no opportunities to show at this time.
+
+	// LIPSTICK ON THE PIG...
+	.col-md-5
+		h3
+			| Refine my results...
+
+		ul style="list-type: none"
+			li style="list-type: none; display: block;"
+				input type="checkbox" checked="checked" style="float: left; margin: 0 8px 0 0"
+				label style=""
+					| I am interested in doing business with the government.
+			li style="list-type: none; display: block;"
+				input type="checkbox" checked="checked" style="float: left; margin: 0 8px 0 0"
+				label style=""
+					| I am interested in accessing financing.
+
+		p
+			a href="#"
+				| Edit my preferences

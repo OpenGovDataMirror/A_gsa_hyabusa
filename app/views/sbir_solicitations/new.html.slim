@@ -1,0 +1,72 @@
+.container
+    <br />
+    <br />
+    .row
+        .col-md-1
+
+        .col-md-10.text-center
+            h1 Submit SBIR Solicitations
+            p.lead Submit SBIR Solicitations here using one, easy form.
+            p.lead
+                | Your opportunities will become easily searchable and have increased exposure on FBOpen.
+                =<> link_to "FBOpen", ENV['FBOPEN_URI']
+                | is a search tool that helps businesses find a wide variety of opportunities to do business with the federal government, including SBIR and the Federal open market.
+
+        .col-md-1
+
+    .row
+        .container
+          h4 Solicitation Information:
+
+          = form_tag sbir_solicitations_path, class: 'new-solicitation', role: 'form', id: 'new-solicitation' do
+          
+              input[type="hidden" name="data_source" value="SBIR"]
+              .row
+                  .col-md-6.form-group
+                      label[for="solnbr"] Solicitation Topic Number
+                      input#solnbr.form-control[type="text" name="solnbr" required]
+                  .col-md-6.form-group
+                      label[for="listing_url"] Listing URL
+                      input#listing_url.form-control[type="url" name="listing_url" required title="Outbound link to the agency's RFP."]
+              #fbopen-alert.alert.alert-success.fade.in
+                  | Congrats, we found your solicitation number on FBOpen and prepopulated the form for you. Any changes you make will update the listing on FBOpen. If this is not your solicitation, or you’d like to start fresh, just click&nbsp;
+                  a[href="#" data-dismiss="alert" aria-hidden="true"] reset
+                  | .
+                  a.close[href="#" aria-hidden="true"] &times;
+              #fbopen-info.alert.alert-info.fade.in
+                  | Hi! We searched FBOpen for an existing record with this solicitation number, but we didn't find anything.
+                  | If this seems to be in error, please double-check your solicitation number, or simply continue filling out the form.
+                  a.close[href="#" aria-hidden="true"] &times;
+              .row
+                  .col-md-12.form-group
+                      label[for="title"] Solicitation Title
+                      input#title.form-control[type="text" name="title" autofocus required]
+              .row
+                  .col-md-7.form-group
+                      label[for="agency"] Agency
+                      input#agency.form-control[type="text" name="agency"]
+                  .col-md-5.form-group
+                      label[for="participating_organizations"] Participating Organizations
+                      input#participating_organizations.form-control[type="text" name="participating_organizations" title="A department or other organization within the agency, if applicable"]
+              .row
+                  .col-md-4.form-group
+                      label[for="open_dt"] Open Date
+                      input#open_dt.form-control[type="text" name="open_dt" title="Application period opens on this date"]
+                  .col-md-4.form-group
+                      label[for="close_dt"] Close Date
+                      input#close_dt.form-control[type="text" name="close_dt" required title="Applications are due by this date"]
+                  .col-md-4.form-group
+                      label[for="posted_dt"] Posted Date
+                      input#posted_dt.form-control[type="text" name="posted_dt" title="Date this solicitation was/will be made public"]
+              .row
+                  .form-group.col-md-12
+                      label[for="summary"]
+                          h4 Funding Objective:
+                      textarea#summary.form-control[name="summary" title="Executive summary/synopsis of the project" rows="7"] 
+                      span.help-block Note: since we're just submitting to a search index, formatting will not be preserved.
+              .row
+                  .form-group.col-md-1
+                      = submit_tag "Submit", class: "btn btn-lg btn-primary"
+                  .col-md-10
+                  .form-group.col-md-1
+                      = button_tag "Reset", type: :reset, class: "btn btn-xs btn-warning"

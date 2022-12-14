@@ -1,0 +1,64 @@
+doctype html
+html
+  head
+    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+      title= content_for?(:title) ? yield(:title) : "BusinessUSA"
+      meta content=(content_for?(:description) ? yield(:description) : "BusinessUSA") name="description" 
+        = stylesheet_link_tag "application", media: "all"
+        = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Bitter:400,700"
+        = javascript_include_tag "application"
+        = include_gon(init: true)
+        = analytics_init if Rails.env.production?
+        = csrf_meta_tags
+        = yield(:head)
+        <!--[if lt IE 9]>
+        <script src="assets/javascripts/html5shiv.js"></script>
+        <![endif]-->
+  body class=("#{controller_name} #{action_name} #{user_signed_in? ? "user-signed-in" : ""}")
+    #beta
+    .navbar.navbar-static-top
+      nav#header.navbar-inner
+        .container
+          = render 'layouts/navigation'
+    #main role="main" 
+      .container
+        .row
+          .col-md-12
+            = render 'layouts/messages'
+        .content
+          .row
+            .col-md-12
+              = yield
+      /! ! end of .container
+    /! ! end of #main
+    footer
+      .row
+        .container
+          .col-md-12
+            ul.footer-nav
+              li
+                = link_to "Home", root_url
+              li
+                = link_to "About Us", "http://business.usa.gov/about-us"
+              li
+                = link_to "USA.gov", "http://www.usa.gov"
+              li
+                = link_to "Privacy and Security", "http://business.usa.gov/privacy-and-security"
+              li
+                = link_to "API", "http://http://business.usa.gov/apis"
+              li
+                = link_to "Link to Us", "http://business.usa.gov/link-to-us"
+              li
+                = link_to "Blogs", "http://business.usa.gov/blog"
+              li
+                = link_to "Share", "http://www.addthis.com/bookmark.php"
+              li
+                = link_to "Site Map", "http://business.usa.gov/sitemap"
+      .row
+        .container
+          .col-md-6.center
+            .disclaimer
+              p
+                = image_tag('usflag.png')
+                | My.Business.USA.gov might one day be an official website of the U.S. Government.
+  = yield(:footer)

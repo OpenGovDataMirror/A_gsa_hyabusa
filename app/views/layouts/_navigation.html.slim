@@ -1,0 +1,19 @@
+.row
+  .col-md-4
+    .branding.clearfix.navbar-header
+      - if user_signed_in?
+        hgroup.say-my
+          | My
+      = link_to '<span class="hidden-offscreen">BusinessUSA</span>', root_path, :class => 'navbar-brand'
+      hgroup.slogan
+        = link_to "Discover. Connect. Grow.", root_path
+  .col-md-8
+    .share-links
+      ul
+        li#twitter
+          a href="https://twitter.com/bizusa" target="_blank"
+        li#linkedIn
+          a href="http://www.linkedin.com/groups/BusinessUSA-2521449" target="_blank"
+    = render "layouts/my_nav"
+    = render "layouts/businessusa_nav"
+

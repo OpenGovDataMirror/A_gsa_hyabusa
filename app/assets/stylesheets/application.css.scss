@@ -1,0 +1,324 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require twitter/bootstrap
+ *= require formtastic-bootstrap
+ *= require bootstrap-datepicker
+*/
+
+
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+body {
+	color: #3e3e3e;
+	font: normal 14px 'Myriad Pro', Arial, Helvetica, sans-serif;
+}
+#header {
+	background: #ebebeb;
+	box-shadow: none;
+	border: 0 none;
+	padding: 20px 0;
+	margin: 0 0 20px 0;
+	.branding {
+		display: block;
+		position: relative;
+		.say-my {
+			position: absolute;
+			font-size: 2.4em;
+			font-family: 'Bitter', Times, serif;
+			color: #4D4D4D;
+			top: 7px;
+		}
+	}
+	.avatar-link {
+		padding: 0 !important;
+		&:hover {
+			background: transparent !important;
+		}
+	}
+	.avatar {
+		margin-top: -28px;
+		border: 1px solid #444;
+		width: 48px;
+		height: 48px;
+
+	}
+	.navbar-brand {
+		background: image-url('my_busa.png');
+		width: 244px;
+		height: 33px;
+		text-indent: -9999px;
+		padding: 0;
+		margin: 40px 20px 0 0;
+		float: left;
+	}
+	.slogan {
+		font: normal 12px 'Bitter', Times, serif;
+		padding-top: 4px;
+		text-indent: 85px;
+		float: left;
+		a {
+			color: #4D4D4D;
+			&:hover {
+				text-decoration: none;
+				text-shadow: none;
+			}
+		}
+	}
+	.nav {
+		float: right;
+		clear: right;
+		font-family: 'Bitter', Times, serif;
+		margin: 0.8em 0 0.8em 0;
+		font-size: 15px;
+		li {
+			margin: 0 5px;
+		}
+		a {
+			color: #4d4d4d;
+			text-shadow: none;
+			padding: 0.9em 1.2em;
+			&:hover {
+				background: #15567B;
+				color: #FFFFFF;
+			}
+		}
+	}
+	.subnav {
+		float: right;
+		font-family: 'Bitter', Times, serif;
+		margin: 0.5em 0;
+		list-style: none;
+		font-size: 13px;
+		li {
+			margin: 0 5px;
+			float: left;
+		}
+		a {
+			color: #6b6b6b;
+			text-shadow: none;
+			padding: 0.6em 1.2em;
+			text-decoration: none;
+			&:hover {
+				background: #e23f29;
+				color: #FFFFFF;
+			}
+		}
+	}
+}
+
+#beta {
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: image-url('beta.png');
+	width: 128px;
+	height: 128px;
+	z-index: 10000;
+}
+
+#main {
+	padding: 10px;
+}
+
+.hidden-offscreen {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.share-links {
+	float: right;
+	ul li {
+		display: block;
+		list-style: none;
+		list-style-type: none;
+		margin: 0;
+		padding: 0 0 0 20px;
+		float: left;
+		width: 30px;
+		height: 30px;
+		a {
+			background-image: image-url('sliconsSprite.png');
+			background-repeat: no-repeat;
+			display: block;
+			width: 30px;
+			height: 30px;
+			float: left;
+		}
+		&#twitter a {
+			background-position: 0 1px;
+			&:hover {
+				background-position: 0 -70px;
+			}
+		}
+		&#linkedIn a {
+			background-position: 0 -142px;
+			&:hover {
+				background-position: 0 -215px;
+			}
+		}
+	}
+}
+
+footer {
+	background: #ebebeb;
+	padding: 20px 0;
+	margin-top: 15px;
+	.footer-nav {
+		list-style: none;
+		margin: 0 auto;
+		margin-bottom: 1em;
+		padding: 0;
+		margin: 1em auto;
+		position: relative;
+		text-align: center;
+		font: normal 12px 'Bitter', Times, serif;
+		li {
+			margin: 0 30px 15px 5px;
+			display: inline-block;
+			zoom: 1;
+			float: none;
+			a {
+				border: 0;
+				color: #1a6894;
+				padding: 8px;
+				text-align: center;
+				text-decoration: none;
+				display: block;
+				position: relative;
+			}
+		}
+	}
+	.disclaimer {
+		font: normal 11px 'Bitter', Times, serif;
+		color: #444;
+		padding-top: 20px;
+		background: transparent image-url('br-dots.png') repeat-x center top;
+		text-align: center;
+		img {
+			padding-right: 15px;
+		}
+		p {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.center {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Bitter', Times, serif !important;
+	color: #444 !important;
+}
+
+.home-tiles {
+	list-style: none;
+	margin: 0;
+	li {
+		list-style: none;
+		float: left;
+		padding: 3px;
+		margin: 0;
+		img {
+			width: 188px;
+			height: 174px;
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
+}
+
+.loading {
+	background: transparent image-url('loading.gif') no-repeat center center;
+	display: block;
+	min-height: 200px;
+	width: 100%;
+}
+
+.start-hidden { display: none; }
+
+.full-login-box {
+	background: image-url('blurred-profile.jpg') no-repeat top center;
+	background-size: 100%;
+	padding: 100px 0;
+	.login {
+		width: 420px;
+		margin: 0 auto;
+		box-shadow: 0 0 120px #545454;
+		padding: 20px 50px;
+		background: image-url('login-bg.png') repeat top left;
+		vertical-align: center;
+	}
+}
+.home.index .content {
+	background: #FFFFFF;
+	box-shadow: none;
+}
+.home.index.user-signed-in .content {
+	background: #eee;
+}
+.login {
+	p {
+		margin: 16px 0;
+	}
+	.login-shield {
+		background: #112136;
+		padding: 0;
+		display: block;
+		color: #FFFFFF;
+		width: 200px;
+		font-weight: bold;
+		margin-left: 80px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		&:hover {
+			color: #FFFFFF;
+			background: #1D6484;
+			text-decoration: none;
+		}
+		img {
+			margin: -3px 10px -1px -39px;
+		}
+		span {
+			
+		}
+	}	
+}
+
+.tt-option {
+  background: white; 
+  margin: 0;
+  padding: 3px;
+}
+
+.tt-dataset-naics {
+  overflow-y: scroll;
+  height: 12em;
+}
